@@ -851,7 +851,6 @@ h1, p {
     justify-content: space-between;
     margin:0;
     padding: 25px 0 35px;
-	border-top: 1px solid var(--gray-light-color);
 }
 
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
@@ -864,7 +863,17 @@ h1, p {
 }
 
 .catalog__item {
+    display: block;
 	width: 100%;
+    cursor: pointer;
+    transition: .2s all;
+	border-top: 1px solid var(--gray-light-color);
+    transition: .3s border-color ease;
+}
+
+.catalog__item:last-child {
+	border-bottom: 1px solid var(--gray-light-color);
+	transition: .3s border-color ease;
 }
 
 .catalog__content_link {
@@ -892,6 +901,12 @@ h1, p {
 	color: var(--purple-dark-dark-color);
 }
 
+.catalog__btn:active .catalog__block_icon {
+	transform: rotate(-90deg);
+	background-color: var(--purple-dark-color);
+	border-color: var(--purple-dark-dark-color);
+}
+
 .catalog__btn {
 	position: relative;
     display: flex;
@@ -904,16 +919,50 @@ h1, p {
     text-align: left;
     cursor: pointer;
 	color: var(--dark-color);
-    transition: .3s color ease;
-	
+    transition: .3s color border-color ease;
 }
 
-.catalog__btn:hover, .catalog__btn:focus-visible {
+.catalog__btn:focus-visible .catalog__block_icon, .catalog__btn:hover .catalog__block_icon {
+	background-color: var(--purple-color);
+}
+
+.catalog__btn:focus-visible .catalog__block_title  {
+	color: var(--white-color);
+	background-color: var(--purple-dark-color);
+}
+
+.catalog__btn:hover .catalog__block_title {
 	color: var(--purple-dark-color);
 }
 
-.catalog__btn:active {
-	color: var(--purple-dark-dark-color);
+.catalog__btn:hover .ui-accordion {
+	border-color: var(--purple-dark-color);
+} 
+
+.catalog__btn:hover.ui-accordion-content {
+	border-color: var(--purple-dark-color);
+}
+
+.catalog__btn:active .catalog__block_title {
+	color: var(--purple-dark-dark-color);	
+}
+
+.catalog__btn:active .ui-accordion  {
+	border-color: var(--purple-dark-dark-color);	
+}
+
+.catalog__btn:active .ui-accordion-content {
+	border-color: var(--purple-dark-dark-color);
+}
+
+.catalog__btn:active .catalog__item {
+	border-color: var(--purple-dark-dark-color);
+}
+
+.catalog__btn:active .catalog__block_icon {
+	transform: rotate(-90deg);
+	background-color: var(--purple-dark-color);
+	border-color: var(--purple-dark-dark-color);
 }
 
 .personality__name {
@@ -952,21 +1001,12 @@ h1, p {
 	min-height: 338px;
     border-top: 1px solid var(--gray-light-color);
     overflow: hidden;
-}
-
-.ui-accordion:last-child {
-	border-bottom: 1px solid var(--gray-light-color) ;
+	transition: .3s border-color ease;
 }
 
 .ui-widget-content {
     border: none;
 }
-
-.catalog__block_content {
-	height: 100%;
-	padding-top: 25px;
-}
-
 
 .empty {
 	background-image: url(../img/accordeon_empty_bg.svg);
@@ -1000,12 +1040,11 @@ h1, p {
 }
 
 .catalog__block_content {
+	height: 100%;
+	padding-top: 25px;
     column-count: 3;
     column-gap: 65px;
-	border-top: 1px solid var(--gray-light-color);
-    transition: .3s border-color ease;
 }
-
 
 .catalog__block_icon {
     position: relative;
@@ -1031,22 +1070,10 @@ h1, p {
     transition: .3s color ease;
 }
 
-.catalog__block_icon:focus-visible, .catalog__block_icon:hover {
-	background-color: var(--purple-color);
-}
-
-.catalog__block_icon:active {
-	transform: rotate(-90deg);
-	background-color: var(--purple-dark-color);
-	border-color: var(--purple-dark-dark-color);
-}
-
 .ui-widget button {
 	font-family: 'OpenSans', sans-serif;
 	font-size: 16px;
 }
-
-
 
 .catalog__content_link {
 	color: var(--dark-color);
@@ -1074,14 +1101,6 @@ h1, p {
 .catalog__content_link:active {
 	color: var(--purple-dark-dark-color);
 	border: none;
-}
-
-.catalog__item {
-    display: block;
-    cursor: pointer;
-    transition: .2s all;
-	border-top: 1px solid var(--gray-light-color);
-    transition: .3s border-color ease;
 }
 
 .catalog__sub-item {
@@ -1579,6 +1598,15 @@ h1, p {
 	max-width: 1920px;
     height: 700px;
 }
+
+.ymaps-layers-pane, [class*="ymaps-2"][class*="-ground-pane"] {
+	filter: grayscale(1);
+	-ms-filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+}
+
 
 /*footer*/
 
