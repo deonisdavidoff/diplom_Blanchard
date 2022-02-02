@@ -93,7 +93,7 @@ const choices = new Choices(element, {
 
 
  new Swiper('.gallery__swiper', {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 50,
   speed: 2000,
   
