@@ -7,18 +7,16 @@
     <title>Blanchard</title>
     <link rel="icon" href="./img/Blanchard.svg" sizes="any" type="image/svg+xml">
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/simplebar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/choices.min.css">
     <link rel="stylesheet" href="https://github.com/Choices-js/Choices.git">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/simplebar.js"></script>
     <script src="./js/choices.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?load=package.standard,package.geoObjects&lang=ru_RU" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="./js/just-validate.min.js"></script>
@@ -29,30 +27,43 @@
         <div class="header__block">     
         <div class="header__top">
                 <div class="container header__container flex">
-                <button class="header__btn-open">
-                    <svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="3.65" fill="#fff"/>
-                    <rect y="8.52" width="28.2" height="3.65" fill="#fff"/>
-                    <rect y="17.04" width="24" height="3.65" fill="#fff"/>
-                    </svg>
+                    <button class="header__btn-open">
+                        <svg class="btn-open_maxi" width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="3.65" fill="#fff"/>
+                            <rect y="8.52" width="28.2" height="3.65" fill="#fff"/>
+                            <rect y="17.04" width="24" height="3.65" fill="#fff"/>
+                        </svg>
+                        <svg class="btn-open_mini" width="25" height="18" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="25" height="2" fill="#fff"/>
+                            <rect y="8" width="16" height="2" fill="#fff"/>
+                            <rect y="16" width="10" height="2" fill="#fff"/>
+                        </svg>
                     </button>
                     <a href="#0" class="header__logo">
                         <img src="./img/logo.svg" alt="Художественная галерея Blanchard" class="header__logo_img">
                     </a>
                     <div class="search-form__container_top form-container">                      
                         <button class="search-form__icon_top form-btn__open" aria-label="Найти">
-                            <svg width="29.45" height="28.82" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="search_maxi" width="29.45" height="28.82" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"/>
-                                </svg>
+                            </svg>
+                            <svg class="search_mini" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0002 8C16.0002 11.3137 13.3139 14 10.0002 14C6.68648 14 4.00019 11.3137 4.00019 8C4.00019 4.68629 6.68648 2 10.0002 2C13.3139 2 16.0002 4.68629 16.0002 8ZM18.0002 8C18.0002 12.4183 14.4185 16 10.0002 16C8.15297 16 6.45197 15.3739 5.09782 14.3224L1.41617 18.0041L0.00195312 16.5898L3.68288 12.9089C2.62828 11.5537 2.00019 9.8502 2.00019 8C2.00019 3.58172 5.58191 0 10.0002 0C14.4185 0 18.0002 3.58172 18.0002 8Z" fill="white"/>
+                            </svg>
                         </button>
                         <form action="#" class="search-form">
-                            <input type="search" class="form__input">
+                            <label class="search-form__label">
+                                <input type="search" class="search-form__input form__input" placeholder="Поиск по сайту">
+                            </label>
                             <button class="form-btn__submit">
-                                <svg width="29.45" height="28.82" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="search_maxi" width="29.45" height="28.82" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"/>
-                                    </svg>
+                                </svg>
+                                <svg class="search_mini" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0002 8C16.0002 11.3137 13.3139 14 10.0002 14C6.68648 14 4.00019 11.3137 4.00019 8C4.00019 4.68629 6.68648 2 10.0002 2C13.3139 2 16.0002 4.68629 16.0002 8ZM18.0002 8C18.0002 12.4183 14.4185 16 10.0002 16C8.15297 16 6.45197 15.3739 5.09782 14.3224L1.41617 18.0041L0.00195312 16.5898L3.68288 12.9089C2.62828 11.5537 2.00019 9.8502 2.00019 8C2.00019 3.58172 5.58191 0 10.0002 0C14.4185 0 18.0002 3.58172 18.0002 8Z" fill="white"/>
+                                </svg>
                             </button>
                                 
                         </form>
@@ -83,14 +94,12 @@
                         <li class="header-list__item header__item_burger">
                             <a class="header__link item_last" href="#contacts">Контакты</a>
                         </li>
-                        <li>
-                <a href="#0" class="come_in header__link">
-                    <svg class="come_in_svg" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" fill="white"/>
-                    </svg>Войти</a>
-                </li>
-                </ul>
-            </nav>
+                    </ul>
+                    <a href="#0" class="come_in header__link">
+                        <svg class="come_in_svg" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" fill="white"/>
+                        </svg>Войти</a>               
+                </nav>
                 </div>
             </div>
             <div class="header__botton">
@@ -146,16 +155,16 @@
                                 <div class="container--dropdown container--dropdown_activ">
                                     <div class="scroll simplebar-content" data-simplebar>
                                         <ul class="dropdown__list container--dropdown-list show list-reset flex-column dropdown__list-active simplebar-scroll-content">
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--renuar">
                                                 <a href="#" class="dropdown__link">Пьер Огюст Ренуар</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--mane">
                                                 <a href="#" class="dropdown__link">Эдуард Мане</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--sisley">
                                                 <a href="#" class="dropdown__link">Альфред Сислей</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--mone">
                                                 <a href="#" class="dropdown__link">Клод Моне</a>
                                             </li>
                                             <li class="dropdown__item container--dropdown-list__item">
@@ -186,16 +195,16 @@
                                 <div class="container--dropdown container--dropdown_activ">
                                     <div class="scroll simplebar-content" data-simplebar>
                                         <ul class="dropdown__list container--dropdown-list show list-reset flex-column dropdown__list-active simplebar-scroll-content">
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--sera">
                                                 <a href="#" class="dropdown__link">Сёра</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--gogen">
                                                 <a href="#" class="dropdown__link">Поль Гоген</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--cezanne">
                                                 <a href="#" class="dropdown__link">Поль Сезан</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--vangogh">
                                                 <a href="#" class="dropdown__link">Винсент Ван Гог</a>
                                             </li>
                                             <li class="dropdown__item container--dropdown-list__item">
@@ -223,16 +232,16 @@
                                 <div class="container--dropdown container--dropdown_activ">
                                     <div class="scroll simplebar-content" data-simplebar>
                                         <ul class="dropdown__list container--dropdown-list show list-reset flex-column dropdown__list-active simplebar-scroll-content">
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--picasso">
                                                 <a href="#" class="dropdown__link">Пабло Пикассо</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--malevich">
                                                 <a href="#" class="dropdown__link">Казимир Малевич</a>
                                             </li>
-                                            <li class="dropdown__item">
+                                            <li class="dropdown__item container--dropdown-list__item  dropdown__link--marinetty">
                                                 <a href="#" class="dropdown__link">Маринетти</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item dropdown__link--kandinsky">
                                                 <a href="#" class="dropdown__link">Кандинский</a>
                                             </li>
                                             <li class="dropdown__item container--dropdown-list__item">
@@ -263,16 +272,16 @@
                                 <div class="container--dropdown container--dropdown_activ">
                                     <div class="scroll simplebar-content" data-simplebar>
                                         <ul class="dropdown__list container--dropdown-list show list-reset flex-column dropdown__list-active simplebar-scroll-content">
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item dropdown__link--balla">
                                                 <a href="#" class="dropdown__link">Джакомо Балла</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item dropdown__link--severiny">
                                                 <a href="#" class="dropdown__link">Джино Северини</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item dropdown__link--pratella">
                                                 <a href="#" class="dropdown__link">Прателла</a>
                                             </li>
-                                            <li class="dropdown__item container--dropdown-list__item">
+                                            <li class="dropdown__item container--dropdown-list__item dropdown__link--karra">
                                                 <a href="#" class="dropdown__link">Карло Карра</a>
                                             </li>
                                             <li class="dropdown__item container--dropdown-list__item">
@@ -338,10 +347,10 @@
         </div>
     </section>
     <section class="gallery" id="gallery">
-        <div class="gallery__container container flex">
+        <div class="gallery__container container">
             <div class="gallery__container_1 flex-column">
                 <h2 class="gallery__title title" aria-label="Галерея">Галерея</h2>
-                 <div class="gallery__filter">
+                <div class="gallery__filter">
                     <p class="gallery__text text">Фильтр:</p>
                     <select name="select" class="gallery__select select">
                         <option value="Живопись" selected>Живопись</option>
@@ -372,7 +381,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="gallery__swiper swiper">
+            <div class="gallery__swiper swiper gallery__swiper_1920">
                 <div class="gallery__navigation slider-nav">
                     <button class="swiper-button-prev gallery__btn--prev"></button>
                     <span class="slider-nav__fraction gallery__fraction">N / N</span>
@@ -381,57 +390,168 @@
                     <div class="swiper-wrapper gallery__wrapper">
                        <div class="gallery__item swiper-slide flex">
                            <div class="gallery__picture">
-                        <a class="gallery__link" href="#0">
-                            <picture>
-                                <img class="gallery__slide_img" src="./img/gallery__1_1920.jpg" alt="">
-                            </picture>                         
-                        </a>
-                    </div> 
-
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__1_1920.jpg" alt="">
+                                    </picture>                         
+                                </a>
+                            </div> 
                             <div class="gallery__picture">
-                        <a class="gallery__link" href="#0">
-                            <picture>
-                                <img class="gallery__slide_img" src="./img/gallery__2_1920.jpg" alt="">
-                            </picture>
-                        </a>
-                    </div>
-
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__2_1920.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
                             <div class="gallery__picture">
-                        <a class="gallery__link" href="#0">
-                            <picture>
-                                <img class="gallery__slide_img" src="./img/gallery__3_1920.jpg" alt="">
-                            </picture>
-                        </a>
-                    </div>
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__3_1920.jpg" alt="">
+                                    </picture>
+                                </a>
+                             </div>
                         </div>
                         <div class="gallery__item swiper-slide flex">
                             <div class="gallery__picture">
-                        <a class="gallery__link" href="#0">
-                            <picture class="gallery__slide_img">
-                                <img src="./img/gallery__4_1920.jpg" alt="">
-                            </picture>
-                        </a>
-                    </div>
-
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__4_1920.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
                             <div class="gallery__picture">                      
-                        <a class="gallery__link" href="#0">
-                            <picture class="gallery__slide_img">
-                                <img src="./img/gallery__5_1920.jpg" alt="">
-                            </picture>
-                        </a>
-                    </div>
-
-
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__5_1920.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
                             <div class="gallery__picture">
-                        <a class="gallery__link" href="#0">
-                            <picture class="gallery__slide_img">
-                                <img src="./img/gallery__6_1920.jpg" alt="">
-                            </picture>
-                        </a>
-                    </div>
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__6_1920.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
                         </div>  
                     </div>
+            </div>
+            <div class="gallery__swiper swiper gallery__swiper_tablet_1024">
+                <div class="gallery__navigation slider-nav">
+                    <button class="swiper-button-prev gallery__btn--prev"></button>
+                    <span class="slider-nav__fraction gallery__fraction">N / N</span>
+                    <button class="swiper-button-next gallery__btn--next"></button>
+                </div>                  
+                <div class="swiper-wrapper gallery__wrapper">
+                    <div class="gallery__item swiper-slide flex">
+                        <div class="gallery__picture">
+                            <a class="gallery__link" href="#0">
+                                <picture class="gallery__slide_img">
+                                    <source media="(max-width:800px)" srcset="./img/gallery__1_768.jpg">
+                                    <img src="./img/gallery__1_1024.jpg" alt="">
+                                </picture>                         
+                            </a>
+                        </div> 
+                        <div class="gallery__picture">
+                            <a class="gallery__link" href="#0">
+                                <picture class="gallery__slide_img">
+                                    <source media="(max-width:800px)" srcset="./img/gallery__2_768.jpg">
+                                    <img src="./img/gallery__2_1024.jpg" alt="">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery__item swiper-slide flex">
+                        <div class="gallery__picture">
+                            <a class="gallery__link" href="#0">
+                                <picture class="gallery__slide_img">
+                                    <source media="(max-width:800px)" srcset="./img/gallery__3_768.jpg">
+                                    <img src="./img/gallery__3_1024.jpg" alt="">
+                                </picture>
+                            </a>
+                        </div>                        
+                        <div class="gallery__picture">
+                            <a class="gallery__link" href="#0">
+                                <picture class="gallery__slide_img">
+                                    <source media="(max-width:800px)" srcset="./img/gallery__4_768.jpg">
+                                    <img src="./img/gallery__4_1024.jpg" alt="">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery__item swiper-slide flex">
+                        <div class="gallery__picture">                      
+                            <a class="gallery__link" href="#0">
+                                <picture class="gallery__slide_img">
+                                    <source media="(max-width:800px)" srcset="./img/gallery__5_768.jpg">
+                                    <img src="./img/gallery__5_1024.jpg" alt="">
+                                </picture>
+                            </a>
+                        </div>
+                        <div class="gallery__picture">
+                            <a class="gallery__link" href="#0">
+                                <picture class="gallery__slide_img">
+                                    <source media="(max-width:800px)" srcset="./img/gallery__6_768.jpg">
+                                    <img src="./img/gallery__6_1024.jpg" alt="">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>  
                 </div>
+            </div>
+            <div class="gallery__swiper swiper gallery__swiper_320">                 
+                    <div class="swiper-wrapper gallery__wrapper">
+                        <div class="gallery__item swiper-slide flex">
+                            <div class="gallery__picture">
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__1_320.jpg" alt="">
+                                    </picture>                         
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery__item swiper-slide flex"> 
+                            <div class="gallery__picture">
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__2_320.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery__item swiper-slide flex">
+                            <div class="gallery__picture">
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__3_320.jpg" alt="">
+                                    </picture>
+                                </a>
+                             </div>
+                        </div>
+                        <div class="gallery__item swiper-slide flex">
+                            <div class="gallery__picture">
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__4_320.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery__item swiper-slide flex">
+                            <div class="gallery__picture">                      
+                                <a class="gallery__link" href="#0">
+                                    <picture class="gallery__slide_img">
+                                        <img src="./img/gallery__5_320.jpg" alt="">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="gallery__navigation slider-nav">
+                        <button class="swiper-button-prev gallery__btn--prev"></button>
+                        <span class="slider-nav__fraction gallery__fraction">N / N</span>
+                        <button class="swiper-button-next gallery__btn--next"></button>
+                    </div>     
             </div>
         </div>
     </section>
@@ -440,13 +560,14 @@
             <h2 class="catalog__title title">Каталог</h2>
             <p class="catalog__text text">Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы. </p>
         </div>
-        <div class="catalog__container_button catalog__container container flex">
+        <div class="catalog__container_button catalog__container container">
             <ul class="catalog__sub-list">
             <li class="catalog__personality catalog__personality_domenico catalog__sub-item catalog__sub-item_active" data-target="tabs-1">
                 <picture class="personality__avatar">
-                    <!-- <source media="(min-width:650px)" srcset=""> -->
-                    <!-- <source media="(min-width:465px)" srcset=""> -->
-                    <img src="./img/catilog_domenico.jpg" alt="Доменико Гирландайо">
+                    <source media="(max-width: 1300px)" src="./img/catalog_domenico_1024.jpg">
+                    <source media="(max-width: 970px)" src="./img/catalog_domenico_768.jpg">
+                    <source media="(max-width: 400px)" src="./img/catalog_domenico_320.jpg">
+                    <img src="./img/catalog_domenico.jpg" alt="Доменико Гирландайо">
                   </picture>
                   <div class="personality__name">Доменико Гирландайо</div>
                   <div class="personality__date">2 июня 1448 — 11 января 1494.</div>
@@ -458,11 +579,11 @@
                   </div>
             </li>
             <li class="catalog__personality catalog__sub-item" data-target="tabs-2">
-                    <img class="personality__avatar" src="./img/catolog_x.svg" alt="неизвестный художник">                
+                    <img class="personality__avatar" src="./img/catalog_x.svg" alt="неизвестный художник">                
                   <div class="personality__name">Что мы о нём знаем?</div>
-                  <div class="personality__date"></div>
-                  <div class="personality__desc">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</div>
-                  <a href="#gallery" class="accordion__link">В галерею</a>
+                  <div class="personality__date personality__date_no"></div>
+                  <div class="personality__desc personality__desc_no">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</div>
+                  <a href="#gallery" class="accordion__link catalog__empty_link">В галерею</a>
             </li>
             </ul>
             <ul class="catalog__accordion" id="accordion">
@@ -471,193 +592,193 @@
                       <span class="catalog__block_title title">C 1400 по 1499 гг.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                        <ul class="catalog__content_list catalog__block_content">
+                    <div class="catalog__block_content">
+                        <ul class="catalog__content_list ">
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Бенедетто ди Биндо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Бенедетто ди Биндо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Бергоньоне, Амброджо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Бергоньоне, Амброджо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Биссоло, Франческо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Биссоло, Франческо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Больтраффио, Джованни</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Больтраффио, Джованни</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Бонсиньори, Франческо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Бонсиньори, Франческо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Боттичини, Рафаэлло</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Боттичини, Рафаэлло</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Брамантино</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Брамантино</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Бреа, Людовико</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Бреа, Людовико</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Бьяджо д’Антонио Туччи</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Бьяджо д’Антонио Туччи</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Веккьетта</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Веккьетта</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Андреа Верроккьо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Андреа Верроккьо</button>
+                            </li>
+                            <li class="catalog__content_item catalog__content_item_active">
+                                <button data-path="tabs-1" class="catalog__content_link catalog__tab catalog__tab_active">Доменико Гирландайо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-1" class="catalog__content_link catalog__tab catalog__tab_active">Доменико Гирландайо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Беноццо Гоццоли</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Беноццо Гоццоли</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Граначчи, Франческо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Граначчи, Франческо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Грегорио ди Чекко</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Грегорио ди Чекко</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Джованни да Удине</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Джованни да Удине</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Джованни ди Паоло</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Джованни ди Паоло</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Джорджоне</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Джорджоне</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Парентино, Бернардо</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Парентино, Бернардо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Пезеллино</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Пезеллино</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Пьетро Перуджино</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Пьетро Перуджино</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Перуцци, Бальдассаре</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Перуцци, Бальдассаре</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Пизанелло</button>
                             </li>
                             <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Пизанелло</button>
-                            </li>
-                            <li class="catalog__content_item">
-                                <button data-path="#tabs-2" class="catalog__content_link catalog__tab">Пинтуриккьо</button>
+                                <button data-path="tabs-2" class="catalog__content_link catalog__tab">Пинтуриккьо</button>
                             </li>
                         </ul>
-                 
-
-                </li>
-                
+                    </div>
+                </li>                
                 <li class="catalog__item">
                     <button class="catalog__btn">
                       <span class="catalog__block_title title">C 1500 по 1599 гг.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                    <div class="catalog__block_content">
-                        <div>
+                    <div class="catalog__block_content catalog__content">
                           <svg class="empty" width="275" height="189" viewBox="0 0 275 189" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="273" height="187" stroke="#B7B7B7" stroke-width="2"/>
-                              </svg>
-                        </div>
+                            </svg>
+                            <svg class="empty_320" width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="89" y="1" width="128" height="88" transform="rotate(90 89 1)" stroke="#B7B7B7" stroke-width="2"/>
+                                </svg>
                       <div class="catalog__empty">
-                          <div class="personality__name_empty">Здесь пока пусто</div> 
-                          <p class="catalog__empty_text">А в галерее вы всегда можете<br>найти что-то интересное для себя</p>
+                          <div class="personality__name_empty">Здесь&nbsp;пока&nbsp;пусто</div> 
+                          <p class="catalog__empty_text">А в галерее вы всегда можете найти что-то интересное для себя</p>
                           <a href="#gallery" class="catalog__empty_link">В галерею</a>
                       </div>
                     </div>
-                </li>
-                
+                </li>                
                 <li class="catalog__item">
                     <button class="catalog__btn">
                       <span class="catalog__block_title title">C 1600 по 1699 гг.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                    <div class="catalog__block_content">
-                        <div>
+                    <div class="catalog__block_content catalog__content">
                           <svg class="empty" width="275" height="189" viewBox="0 0 275 189" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="273" height="187" stroke="#B7B7B7" stroke-width="2"/>
-                              </svg>
-                        </div>
+                            </svg>
+                            <svg class="empty_320" width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="89" y="1" width="128" height="88" transform="rotate(90 89 1)" stroke="#B7B7B7" stroke-width="2"/>
+                                </svg>
                       <div class="catalog__empty">
-                          <div class="personality__name_empty">Здесь пока пусто</div> 
-                          <p class="catalog__empty_text">А в галерее вы всегда можете<br>найти что-то интересное для себя</p>
+                          <div class="personality__name_empty">Здесь&nbsp;пока&nbsp;пусто</div> 
+                          <p class="catalog__empty_text">А в галерее вы всегда можете найти что-то интересное для себя</p>
                           <a href="#gallery" class="catalog__empty_link">В галерею</a>
                       </div>
                     </div>
-                </li>
-                
+                </li>                
                 <li class="catalog__item">
                     <button class="catalog__btn">
                       <span class="catalog__block_title title">C 1700 по 1799 гг.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                    <div class="catalog__block_content">
-                        <div>
+                    <div class="catalog__block_content catalog__content">
                           <svg class="empty" width="275" height="189" viewBox="0 0 275 189" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="273" height="187" stroke="#B7B7B7" stroke-width="2"/>
                               </svg>
-                        </div>
+                              <svg class="empty_320" width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="89" y="1" width="128" height="88" transform="rotate(90 89 1)" stroke="#B7B7B7" stroke-width="2"/>
+                                </svg>
                       <div class="catalog__empty">
-                          <div class="personality__name_empty">Здесь пока пусто</div> 
-                          <p class="catalog__empty_text">А в галерее вы всегда можете<br>найти что-то интересное для себя</p>
+                          <div class="personality__name_empty">Здесь&nbsp;пока&nbsp;пусто</div> 
+                          <p class="catalog__empty_text">А в галерее вы всегда можете найти что-то интересное для себя</p>
                           <a href="#gallery" class="catalog__empty_link">В галерею</a>
                       </div>
                     </div>
-                </li>
-                
+                </li>                
                 <li class="catalog__item">
                     <button class="catalog__btn">
                       <span class="catalog__block_title title">C 1800 по 1899 гг.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                    <div class="catalog__block_content">
-                        <div>
+                    <div class="catalog__block_content catalog__content">
                           <svg class="empty" width="275" height="189" viewBox="0 0 275 189" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="273" height="187" stroke="#B7B7B7" stroke-width="2"/>
                               </svg>
-                        </div>
+                              <svg class="empty_320" width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="89" y="1" width="128" height="88" transform="rotate(90 89 1)" stroke="#B7B7B7" stroke-width="2"/>
+                                </svg>
                       <div class="catalog__empty">
-                          <div class="personality__name_empty">Здесь пока пусто</div> 
-                          <p class="catalog__empty_text">А в галерее вы всегда можете<br>найти что-то интересное для себя</p>
+                          <div class="personality__name_empty">Здесь&nbsp;пока&nbsp;пусто</div> 
+                          <p class="catalog__empty_text">А в галерее вы всегда можете найти что-то интересное для себя</p>
                           <a href="#gallery" class="catalog__empty_link">В галерею</a>
                       </div>
                     </div>
-                </li>
-                
+                </li>                
                 <li class="catalog__item">
                     <button class="catalog__btn">
                       <span class="catalog__block_title title">C 1900 по 1999 гг.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                    <div class="catalog__block_content">
-                        <div>
+                    <div class="catalog__block_content catalog__content">
                           <svg class="empty" width="275" height="189" viewBox="0 0 275 189" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="273" height="187" stroke="#B7B7B7" stroke-width="2"/>
                               </svg>
-                        </div>
+                              <svg class="empty_320" width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="89" y="1" width="128" height="88" transform="rotate(90 89 1)" stroke="#B7B7B7" stroke-width="2"/>
+                                </svg>
                       <div class="catalog__empty">
-                          <div class="personality__name_empty">Здесь пока пусто</div> 
-                          <p class="catalog__empty_text">А в галерее вы всегда можете<br>найти что-то интересное для себя</p>
+                          <div class="personality__name_empty">Здесь&nbsp;пока&nbsp;пусто</div> 
+                          <p class="catalog__empty_text">А в галерее вы всегда можете найти что-то интересное для себя</p>
                           <a href="#gallery" class="catalog__empty_link">В галерею</a>
                       </div>
                     </div>
-                </li>
-                
+                </li>                
                 <li class="catalog__item">
                     <button class="catalog__btn">
                       <span class="catalog__block_title title">C 2000 г.</span>
                       <span class="catalog__block_icon"></span>
                     </button>
-                    <div class="catalog__block_content">
-                        <div>
+                    <div class="catalog__block_content catalog__content">
                           <svg class="empty" width="275" height="189" viewBox="0 0 275 189" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <rect x="1" y="1" width="273" height="187" stroke="#B7B7B7" stroke-width="2"/>
                               </svg>
-                        </div>
+                              <svg class="empty_320" width="90" height="130" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="89" y="1" width="128" height="88" transform="rotate(90 89 1)" stroke="#B7B7B7" stroke-width="2"/>
+                                </svg>
                       <div class="catalog__empty">
-                          <div class="personality__name_empty">Здесь пока пусто</div> 
-                          <p class="catalog__empty_text">А в галерее вы всегда можете<br>найти что-то интересное для себя</p>
+                          <div class="personality__name_empty">Здесь&nbsp;пока&nbsp;пусто</div> 
+                          <p class="catalog__empty_text">А в галерее вы всегда можете найти что-то интересное для себя</p>
                           <a href="#gallery" class="catalog__empty_link">В галерею</a>
                       </div>
                     </div>
@@ -670,10 +791,14 @@
         <div class="container events__container">
           <h2 class="events__title title">События</h2>
             <div class="events__swiper swiper">
-                <div class="events__swiper-wrapper swiper-wrapper">
-                    <div class="events__slide swiper-slide">              
+                <div class="events__swiper-wrapper swiper-wrapper" id="events__swiper">
+                    <div class="events__slide swiper-slide" id="events__1">              
                         <figure class="events__image-box">
-                            <img class="events__img" src="./img/event_1.jpg" alt="Книжная гравюра в живом восприятии">
+                            <picture class="events__img">
+                                <source media="(max-width: 970)" srcset="./img/event_1_768.jpg">
+                                <source media="(max-width: 1300)" srcset="./img/event_1_1024.jpg">
+                                <img src="./img/event_1.jpg" alt="Книжная гравюра в живом восприятии">
+                            </picture>
                             <figcaption class="events__info">
                                 <div class="events__address">Музей им. Щусева</div>
                                 <div class="events__date">с 20 марта по 30 апреля</div>
@@ -689,9 +814,12 @@
                             <a href="#0" class="events__link link-primary">Подробнее</a>
                         </div>
                     </div>
-                    <div class="events__slide swiper-slide"> 
+                    <div class="events__slide swiper-slide" id="events__2"> 
                         <figure class="events__image-box">
-                            <img class="events__img" src="./img/event_2.jpg" alt="«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.">
+                            <picture class="events__img">
+                                <source media="(max-width: 1300)" src="./img/event_2_1024.jpg">
+                                <img src="./img/event_2.jpg" alt="«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.">
+                            </picture>
                             <figcaption class="events__info">
                                 <div class="events__address">ММОМА</div>
                                 <div class="events__date">24 марта 19:00</div>
@@ -707,9 +835,12 @@
                             <a href="#0" class="events__link link-primary">Подробнее</a>
                         </div>
                     </div> 
-                    <div class="events__slide swiper-slide">
+                    <div class="events__slide swiper-slide" id="events__3">
                         <figure class="events__image-box">
-                            <img class="events__img" src="./img/event_3.jpg" alt="Выставка «Формация 2020»">
+                            <picture class="events__img">
+                                <source media="(max-width: 1300)" src="./img/event_3_1024.jpg">
+                                <img src="./img/event_3.jpg" alt="Выставка «Формация 2020»">
+                            </picture>
                             <figcaption class="events__info">
                                 <div class="events__address">Еврейский музей</div>
                                 <div class="events__date">с 31 марта по 21 апреля</div>
@@ -725,9 +856,12 @@
                             <a href="#0" class="events__link link-primary">Подробнее</a>
                         </div>
                     </div>
-                    <div class="events__slide swiper-slide">
+                    <div class="events__slide swiper-slide" id="events__4">
                         <figure class="events__image-box">
-                            <img class="events__img" src="./img/event_4.jpg" alt="Джон Винзор. Фотографии из серии «Метафора серебра»">
+                            <picture class="events__img">
+                                <source media="(max-width: 1300)" src="./img/event_4_1024.jpg">
+                                <img src="./img/event_4.jpg" alt="Джон Винзор. Фотографии из серии «Метафора серебра»">
+                            </picture>
                             <figcaption class="events__info">
                                 <div class="events__address">ММОМА</div>
                                 <div class="events__date">с 8 апреля по 20 мая</div>
@@ -742,9 +876,12 @@
                             <a href="#0" class="events__link link-primary">Подробнее</a>
                         </div>
                     </div>
-                    <div class="events__slide swiper-slide">
+                    <div class="events__slide swiper-slide" id="events__5">
                         <figure class="events__image-box">
-                            <img class="events__img" src="./img/event_5.jpg" alt="Третьяковка на Крымском валу">
+                            <picture class="events__img">
+                                <source media="(max-width: 1300)" src="./img/event_5_1024.jpg">
+                                <img src="./img/event_5.jpg" alt="Третьяковка на Крымском валу">
+                            </picture>
                             <figcaption class="events__info">
                                 <div class="events__address">Третьяковка на Крымском валу</div>
                                 <div class="events__date">с 30 марта по 30 апреля</div>
@@ -764,25 +901,31 @@
                 <button class="swiper-button-prev events__btn--prev"></button>
                 <button class="swiper-button-next events__btn--next"></button>
             </div>
+            <div class="events__bullet"></div>
     </section>
     <section class="projects container" id="projects">
         <h2 class="projects__title title">Проекты</h2>
         <div class="projects__tooltip">
-            <div class="projects__text text">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно - пропагандистское&nbsp; &nbsp; &nbsp;обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых&nbsp; &nbsp; &nbsp;предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.&nbsp;Подробнее:
-                <a href="#" class="projects__text_link">blanchard-art.ru/projects</a>
-            
-            <div class="projects__marker projects__marker_1" tabindex="0"></div>
-            <div class="projects__popup projects__popup_1">
-                Пример современных тенденций - современная методология разработки 
+            <div class="projects__text text">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно - пропагандистское
+            <div class="projects__marker projects__marker_1" tabindex="0">
+                <div class="projects__popup projects__popup_1">
+                    Пример современных тенденций - современная методология разработки 
+                </div> 
             </div>
-            <div class="projects__marker projects__marker_2" tabindex="0"></div>
-            <div class="projects__popup projects__popup_2">
-                Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции  
+            обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия&nbsp;представителей оппозиции могут быть&nbsp;рассмотрены
+            <div class="projects__marker projects__marker_2" tabindex="0">
+                <span class="projects__popup projects__popup_2">
+                    Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции  
+                </span>
             </div>
-            <div class="projects__marker projects__marker_3" tabindex="0"></div>
-            <div class="projects__popup projects__popup_3">
-                В стремлении повысить качество 
+            исключительно&nbsp;в&nbsp;разрезе&nbsp;маркетинговых&nbsp;и финансовых
+            <div class="projects__marker projects__marker_3" tabindex="0">
+                <span class="projects__popup projects__popup_3">
+                    В стремлении повысить качество 
+                </span>
             </div>
+            предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости.&nbsp;Подробнее:
+                <a href="#" class="projects__text_link"><nobr>blanchard-art.ru/projects</nobr></a>
         </div>
         </div>
         <h3 class="projects__title_min">Партнёры проектов:</h3>
@@ -828,18 +971,21 @@
                 <h3 class="contacts__title">Шоурум №4</h3>
                 <p class="contacts__text">Леонтьевский переулок, дом 5/1</p>
             </div>
-            <form action="https://jsonplaceholder.typicode.com/posts" class="contacts__form flex" method="POST">
-                <div class="contacts__input">
+            <form action="https://jsonplaceholder.typicode.com/posts" class="contacts__form" method="POST">
+                <div class="contacts__blocks_input flex">
+                <div class="contacts__block_input">
                 <label for="name" class="flex flex_column">
-                  <input id="name" type="text" name="name" placeholder="Имя*" class="form__input" data-validate-field="name">
+                  <input id="name" type="text" name="name" placeholder="Имя*" class="contacts__input" data-validate-field="name">
                 </label>
             </div>
-            <div class="contacts__input">
+            <div class="contacts__block_input">
                 <label for="tel" class="flex flex_column">
-                  <input id="tel" type="tel" name="tel" placeholder="Телефон*" class="form__input" data-validate-field="phone">
+                  <input id="tel" type="tel" name="tel" placeholder="Телефон*" class="contacts__input" data-validate-field="phone">
                 </label>
             </div>
+        </div>
                 <button class="contacts__btn btn_a" type="submit">Заказать обратный звонок</button>
+                <button class="contacts__btn_320 btn_a" type="submit">Заказать</button>
             </form>
             <div class="contacts__social">
                 <h3 class="contacts__title">Связаться в один клик</h3>
@@ -852,16 +998,17 @@
             </div>
         </div>
          <div id="YMapsID"></div>
+         <div id="YMapsID_2"></div>
     </section>
     <footer class="footer flex">
         <div class="footer__logo">
             <a href="#0" class="footer__logo_link">
-                <img src="./img/logo.svg" alt="Художественная галерея Blanchard" class="header__logo_img">
+                <img src="./img/logo.svg" alt="Художественная галерея Blanchard" class="header__logo_img footer__logo_img">
             </a>
         </div>
         <div class="footer__social">
             <ul class="footer__social_list flex">
-                <li class="footer__social_item">
+                <li class="footer__social_item" id="footer__vk">
                     <a href="#" class="footer__link">
                         <svg class="footer__img" alt="ВКонтакте" width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5 0C10.074 0 0 10.0736 0 22.5C0 34.9264 10.074 45 22.5 45C34.926 45 45 34.9264 45 22.5C45 10.0736 34.926 0 22.5 0ZM33.9132 24.9335C34.9619 25.9577 36.0714 26.9217 37.0128 28.0519C37.4299 28.5519 37.823 29.0688 38.1222 29.6503C38.5495 30.4794 38.1637 31.3886 37.4216 31.4379L32.812 31.4369C31.6215 31.5354 30.6741 31.0553 29.8754 30.2414C29.2378 29.5927 28.6462 28.8999 28.0321 28.2292C27.7812 27.9539 27.517 27.6947 27.2021 27.4907C26.5737 27.0819 26.0277 27.2072 25.6677 27.8636C25.3008 28.5316 25.217 29.2719 25.182 30.0153C25.1319 31.1022 24.8041 31.3863 23.7135 31.4374C21.3832 31.5465 19.1721 31.1929 17.117 30.0181C15.3041 28.9818 13.901 27.5193 12.6783 25.8634C10.2973 22.6353 8.47381 19.0924 6.8354 15.4478C6.46665 14.627 6.73642 14.1878 7.64194 14.1707C9.14639 14.1417 10.6508 14.1454 12.1553 14.1694C12.7676 14.179 13.1727 14.5294 13.4079 15.1071C14.2209 17.1074 15.2176 19.0105 16.4665 20.7755C16.7994 21.2455 17.1391 21.7142 17.623 22.0461C18.157 22.4125 18.5639 22.2915 18.8158 21.6953C18.9769 21.3164 19.0464 20.9113 19.0814 20.5053C19.2011 19.1145 19.2153 17.7242 19.0082 16.339C18.8793 15.4722 18.3918 14.9124 17.5277 14.7485C17.0876 14.6652 17.152 14.5022 17.3661 14.2508C17.7376 13.8163 18.0856 13.5474 18.7812 13.5474L23.9893 13.5465C24.8101 13.7076 24.9942 14.0759 25.1056 14.9027L25.1102 20.6903C25.1006 21.0103 25.2709 21.9586 25.8454 22.1681C26.3058 22.32 26.6096 21.9508 26.8849 21.6594C28.1339 20.334 29.0237 18.7697 29.8206 17.1506C30.1723 16.4366 30.4757 15.6978 30.7703 14.9575C30.9895 14.4101 31.3301 14.1408 31.9479 14.15L36.9631 14.156C37.1108 14.156 37.2609 14.1574 37.4073 14.1827C38.2525 14.3273 38.4841 14.6909 38.2226 15.5154C37.811 16.8109 37.0114 17.89 36.2297 18.9718C35.3919 20.1301 34.4983 21.2478 33.6687 22.4111C32.9064 23.4746 32.9667 24.01 33.9132 24.9335Z" fill="#CACACA"/>

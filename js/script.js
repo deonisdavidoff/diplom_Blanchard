@@ -92,7 +92,7 @@ const choices = new Choices(element, {
 
 
 
- new Swiper('.gallery__swiper', {
+ new Swiper('.gallery__swiper_1920', {
   slidesPerView: 1,
   spaceBetween: 50,
   speed: 2000,
@@ -111,31 +111,117 @@ const choices = new Choices(element, {
 })
 
 
+new Swiper('.gallery__swiper_tablet_1024', {
+  slidesPerView: 1,
+  spaceBetween: 34,
+  speed: 2000,
+  
+  navigation: {
+    nextEl: '.gallery__btn--next',
+    prevEl: '.gallery__btn--prev',
+  },
+
+  
+  pagination: {
+    el: '.slider-nav__fraction',
+    type: 'fraction',
+  },
+
+  breakpoints: {
+    800: {
+      spaceBetween: 38,
+    }
+  },
+
+})
+
+new Swiper('.gallery__swiper_320', {
+  slidesPerView: 1,
+  spaceBetween: 12,
+  speed: 2000,
+  
+  navigation: {
+    nextEl: '.gallery__btn--next',
+    prevEl: '.gallery__btn--prev',
+  },
+
+  
+  pagination: {
+    el: '.slider-nav__fraction',
+    type: 'fraction',
+  },
+
+})
 
 
 new Swiper('.events__swiper', {
-  slidesPerView: 3,
-  spaceBetween: 50,
-  speed: 2000,
   
+  speed: 2000, 
   navigation: {
     nextEl: '.events__btn--next',
     prevEl: '.events__btn--prev',
   },
 
+  pagination: {
+    el: '.events__bullet',
+    clickable: true,
+  },
+
+  breakpoints: {
+    1300: {
+      spaceBetween: 50,
+      slidesPerView: 3,
+    },
+
+    970: {
+      spaceBetween: 27,
+      slidesPerGroup: 3,
+      slidesPerView: 3,
+    },
+
+    620: {
+      spaceBetween: 34,
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+
+    280: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+  },
 
 })
 
 new Swiper('.projects__swiper', {
-  slidesPerView: 3,
-  spaceBetween: 50,
-  speed: 2000,
   
+  speed: 2000, 
   navigation: {
     nextEl: '.projects__btn--next',
     prevEl: '.projects__btn--prev',
   },
 
+  breakpoints: {
+    1300: {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+
+    970: {
+      slidesPerView: 2,
+      spaceBetween: 50,
+    },
+
+    620: {
+      slidesPerView: 2,
+      spaceBetween: 33.97,
+    },
+
+    280: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+  },
 
 })
 
@@ -159,23 +245,31 @@ new JustValidate('.contacts__form', {
   }
 })
 
-$(function () {
-  $("#accordion").accordion();
-});
 $("#accordion").accordion({
   icons: false,
-  active: false,
+  active: 0,
   collapsible: true,
+  heightStyle: 'content',
+	header: '.catalog__btn',
+  animate: 200
+
 });
 
+  /** Tabs **/
+  document.querySelectorAll('.catalog__tab').forEach(function (tabLink) {
+    tabLink.addEventListener('click', function (event) {
+      const path = event.currentTarget.dataset.path;
 
-
-
-$('.catalog__block_btn').click(function(event) {
-  $(this).toggleClass('active').naxt().slideToggle(300);
-});
-
-
+      document.querySelectorAll('.catalog__sub-item').forEach(function (tabContent) {
+        tabContent.classList.remove('catalog__sub-item_active');
+      });
+      document.querySelectorAll('.catalog__tab').forEach(function (tabContent) {
+        tabContent.classList.remove('catalog__tab_active');
+      });
+      event.currentTarget.classList.add('catalog__tab_active')
+      document.querySelector(`[data-target="${path}"]`).classList.add('catalog__sub-item_active');
+    });
+  });
 
 
 ymaps.ready(init);
@@ -187,7 +281,7 @@ function init() {
     });
 
             // Создадим пользовательский макет ползунка масштаба.
-            ZoomLayout = ymaps.templateLayoutFactory.createClass("<div>" +
+            ZoomLayout = ymaps.templateLayoutFactory.createClass("<div class='icon-btn'>" +
             "<div id='zoom-in' class='btn'><i class='icon-plus'></i></div><br>" +
             "<div id='zoom-out' class='btn'><i class='icon-minus'></i></div>" +
             "</div>", {
@@ -255,24 +349,24 @@ function init() {
     });
 
     myMap.geoObjects.add(myPlacemark);
+
+    ymaps.ready(function () {
+      var myMap_2 = new ymaps.Map("YMapsID_2", {
+        center: [55.758468, 37.601088],
+        zoom: 13,
+        controls: []
+      });
+
+      var myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: './img/mars_icon.svg',
+        iconImageSize: [20, 20],
+        iconImageOffset: [-3, -42]
+    });
+  
+    myMap_2.geoObjects.add(myPlacemark);
+    });
 };
-
-
-
-document.querySelectorAll('.catalog__tab').forEach(function (tabLink) {
-  tabLink.addEventListener('click', function (event) {
-    const path = event.currentTarget.dataset.path;
-
-    document.querySelectorAll('.catalog__sub-item').forEach(function (tabContent) {
-      tabContent.classList.remove('catalog__sub-item_active');
-    });
-    document.querySelectorAll('.catalog__tab').forEach(function (tabContent) {
-      tabContent.classList.remove('catalog__tab_active');
-    });
-    event.currentTarget.classList.add('catalog__tab_active')
-    document.querySelector(`[data-target="${path}"]`).classList.add('catalog__sub-item_active');
-  });
-});
 
 });
 
