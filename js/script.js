@@ -276,7 +276,7 @@ ymaps.ready(init);
 function init() {
     var myMap = new ymaps.Map("YMapsID", {
       center: [55.758468, 37.601088],
-      zoom: 14,
+      zoom: 14.5,
       controls: []
     });
 
