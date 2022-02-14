@@ -2170,13 +2170,19 @@ h1, p {
 	} 
 
 	.contacts__input {
-		margin-right: 25px;
+		padding: 9px 49px 9px 24px;
+		margin-right: 21px;
 	}
 
 	.contacts__form {
 		margin-bottom: 30px;
 	}
 
+	.contacts__btn {
+		letter-spacing: .37px;
+		padding: 12.5px 42.5px;
+	}
+	
 	.contacts__title_social {
 		margin-bottom: 5px;
 	}
