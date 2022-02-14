@@ -35,9 +35,9 @@ document.querySelector(".header__btn-open").addEventListener("click", function()
       dropdown.classList.toggle("active-header__item_botton");
       btn.classList.toggle("active--btn")
     })
-  })
+  });
 
-  
+
   
   document.addEventListener("click", function(e) {
     let target = e.target;
@@ -49,13 +49,12 @@ document.querySelector(".header__btn-open").addEventListener("click", function()
           el.classList.remove("active--btn");
       });
     }
-  })
-
+  });
 
   document.querySelector(".form-btn__open").addEventListener("click", function() {
     document.querySelector(".search-form").classList.add("search-form__active");
     this.classList.add("active");
-  })
+  });
   
   document.addEventListener("click", function(e) {
     let target = e.target;
@@ -65,7 +64,7 @@ document.querySelector(".header__btn-open").addEventListener("click", function()
       form.querySelector("input").value = "";
       document.querySelector(".form-btn__open").classList.remove("active")
     }
-  })
+  });
 
 
 const container = document.querySelector(".hero__slide")

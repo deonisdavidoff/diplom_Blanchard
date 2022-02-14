@@ -314,7 +314,6 @@ figure {
     justify-content: space-between;
     padding: 20px 0 16px 0;
     background: rgba(0, 0, 0, .4);
-
 }
 
 .dropdown__header_btn {
@@ -519,6 +518,10 @@ figure {
 
 .dropdown__link--karra {
 	background-image: url(../img/karra.jpg);
+}
+
+.active-header__item_botton {
+    display: block;
 }
 
 .dropdown__link {
