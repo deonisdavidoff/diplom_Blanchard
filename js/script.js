@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", function() {
     );
   
   
-      document.querySelectorAll(".dropdown__header_btn").forEach(item => {
+      document.querySelectorAll(".header__dropdown-btn").forEach(item => {
       item.addEventListener("click", function() {
         let btn = this;
-        let dropdown = this.parentElement.querySelector(".container--dropdown_activ");
+        let dropdown = this.parentElement.querySelector(".container-dropdown_activ");
   
         
-        document.querySelectorAll(".dropdown__header_btn").forEach(el => {
+        document.querySelectorAll(".header__dropdown-btn").forEach(el => {
           if (el != btn) {
             el.classList.remove("active--btn");
           }
         });
         
-        document.querySelectorAll(".container--dropdown_activ").forEach(el => {
+        document.querySelectorAll(".container-dropdown_activ").forEach(el => {
           if (el != dropdown) {
             el.classList.remove("active-header__item_botton");
           }
@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function() {
     
     document.addEventListener("click", function(e) {
       let target = e.target;
-      if (!target.closest(".header__list_botton")) {
-        document.querySelectorAll(".container--dropdown").forEach(el => {
+      if (!target.closest(".header__list-botton")) {
+        document.querySelectorAll(".container-dropdown").forEach(el => {
             el.classList.remove("active-header__item_botton");
         })
-         document.querySelectorAll(".dropdown__header_btn").forEach(el => {
+         document.querySelectorAll(".header__dropdown-btn").forEach(el => {
             el.classList.remove("active--btn");
         });
       }
@@ -97,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function() {
     speed: 2000,
     
     navigation: {
-      nextEl: '.gallery__btn--next',
-      prevEl: '.gallery__btn--prev',
+      nextEl: '.gallery__btn-next',
+      prevEl: '.gallery__btn-prev',
     },
   
     
@@ -116,8 +116,8 @@ document.addEventListener("DOMContentLoaded", function() {
     speed: 2000,
     
     navigation: {
-      nextEl: '.gallery__btn--next',
-      prevEl: '.gallery__btn--prev',
+      nextEl: '.gallery__btn-next',
+      prevEl: '.gallery__btn-prev',
     },
   
     
@@ -140,8 +140,8 @@ document.addEventListener("DOMContentLoaded", function() {
     speed: 2000,
     
     navigation: {
-      nextEl: '.gallery__btn--next',
-      prevEl: '.gallery__btn--prev',
+      nextEl: '.gallery__btn-next',
+      prevEl: '.gallery__btn-prev',
     },
   
     
