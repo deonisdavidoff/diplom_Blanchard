@@ -1,4 +1,14 @@
 
+$(function() {
+  $('a[href^="#"]').click(function() {
+      var e = $(this).attr("href");
+      return $("html, body").animate({
+          scrollTop: $(e).offset().top
+      }, 1200),
+      !1
+  })
+}),
+
 document.addEventListener("DOMContentLoaded", function() {
 
   document.querySelector(".header__btn-open").addEventListener("click", function() {
@@ -157,8 +167,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     speed: 2000, 
     navigation: {
-      nextEl: '.events__btn--next',
-      prevEl: '.events__btn--prev',
+      nextEl: '.events__btn-next',
+      prevEl: '.events__btn-prev',
     },
   
     pagination: {
