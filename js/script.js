@@ -206,8 +206,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     speed: 2000, 
     navigation: {
-      nextEl: '.projects__btn--next',
-      prevEl: '.projects__btn--prev',
+      nextEl: '.projects__btn-next',
+      prevEl: '.projects__btn-prev',
     },
   
     breakpoints: {
@@ -233,7 +233,18 @@ document.addEventListener("DOMContentLoaded", function() {
     },
   
   })
-  
+
+  $( function() {
+    $( document ).tooltip( {
+      items: "tooltip-marker",
+      maxWidth: 264,
+    });
+    $( ".tooltip-marker" ).tooltip({
+      position: { my: "bottom-15", at: "center-1" },
+    });
+  } );
+
+ 
   new JustValidate('.contacts__form', {
     rules: {
       name: {
