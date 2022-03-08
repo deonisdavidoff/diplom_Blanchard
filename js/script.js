@@ -1,13 +1,30 @@
-
-$(function() {
-  $('a[href^="#"]').click(function() {
-      var e = $(this).attr("href");
-      return $("html, body").animate({
-          scrollTop: $(e).offset().top
-      }, 1200),
-      !1
-  })
-}),
+$('a[href*="#"]')
+  .on('click', function(event) {
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 2500,
+         function() {
+          var $target = $(target);
+          $target.trigger('focus-visible');
+          if ($target.is(":focus-visible")) { 
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); 
+            $target.trigger('focus-visible'); 
+          };
+        });
+      }
+    }
+  });
 
 document.addEventListener("DOMContentLoaded", function() {
 

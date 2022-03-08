@@ -28,7 +28,11 @@
 	font-style: normal;
 }
 
-
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+	  scroll-behavior: auto;
+	}
+}
 
 :root {
     --black-color: #000;
@@ -49,6 +53,7 @@
 
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -59,7 +64,11 @@ html {
 
 *:focus-visible {
 	outline: 0;
-  }
+}
+
+#my-element {
+	scroll-behavior: smooth;
+}
 
 ul {
     padding: 0;
@@ -231,6 +240,7 @@ figure {
 .personality__date_no,
 .empty-320,
 .events__bullet,
+.projects__link-768,
 .projects__text.for-320px,
 .contacts__btn-320,
 .map-2 {
@@ -279,11 +289,11 @@ figure {
 	margin-right: 7px;
 }
 
-.come-in:hover:not(:focus) path {
+.come-in:hover:not(:focus-visible) path {
 	fill: var(--purple-color);
 }
 
-.come-in:active:not(:focus) path {
+.come-in:active:not(:focus-visible) path {
 	fill: var(--purple-dark-color);
 }
 
@@ -310,8 +320,7 @@ figure {
     cursor: pointer;
     color: var(--white-color);
 	border: 0;
-    transition-property: backgrount-color, color, stroke;
-    transition: .3s ease-in-out;	
+    transition: all .3s ease-in-out;	
 }
 
 .header__dropdown-btn {
@@ -364,6 +373,7 @@ figure {
 	height: 300px;
 	padding: 40px;
     background-color: rgba(0, 0, 0, 0.4);
+	animation: anim  1s ease-in-out;
 }
 
 [data-simplebar] {
@@ -409,6 +419,7 @@ figure {
 	outline: 2px solid  rgba(0, 0, 0, 0);
 	outline-offset: -2px;
 	transition: all .3s ease-in-out;
+	animation: anim 2s ease-in-out;
 }
 
 .dropdown__item::after {
@@ -545,7 +556,20 @@ figure {
 	height: 10px;
     background-image: url(../img/dropdown_viol.svg);
 	background-repeat: no-repeat;
+	animation: anim 1s ease-in-out;
 }
+  
+  @keyframes anim {
+	0% {
+	  	opacity: 0;
+	}
+	50% {
+	  	opacity: .5;
+	}
+	100% {
+		opacity: 1;
+	}
+  }
  
 .search-form__input {
     margin-left: 9px;
@@ -778,6 +802,7 @@ h1, p {
     animation: dropdownOpen;
     -webkit-animation-duration: .5s;
     animation-duration: .5s;
+	animation: anim 1s ease-in-out;
 }
 
 .choices__list--dropdown .choices__item:not(:last-child) {
@@ -1500,13 +1525,12 @@ h1, p {
 
 .projects-slaider {
 	position: relative;
-	justify-content: center;
 }
 
 .projects__swiper {
     max-width: 1450px;
 	width: 100%; 
-	margin-left: 78px;
+	margin-left: auto;
 }
 
 .projects__slide {
@@ -1687,7 +1711,6 @@ h1, p {
 	border: none; 
 	box-shadow: none;
 	border-radius: 0;
-
 }
 
 .tooltip-marker {
@@ -1703,12 +1726,9 @@ h1, p {
 
 /*contacts*/
 
-.contacts {
-	border: 1px solid var(--gray-light-color);
-}
-
 .contacts__container {
 	padding-right: 140px;
+	border: 1px solid var(--gray-light-color);
 }
 
 .contacts__content {
@@ -2045,9 +2065,10 @@ h1, p {
 	}
 
 	.events__bullet {
+		position: absolute;
 		display: flex;
 		justify-content: center;
-		padding-top: 30px;
+
 	}
 
 	.swiper-pagination-bullet {
@@ -2055,6 +2076,16 @@ h1, p {
 		height: 10px;
 		background: var(--gray-light-color);
 		opacity: 1;
+	}
+
+	.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+		margin: var(--swiper-pagination-bullet-horizontal-gap,7.5px);
+	}
+
+	.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+		bottom: -45px;
+		left: 0;
+		width: 100%;
 	}
 	
 	.swiper-pagination-bullet-active {
@@ -2202,13 +2233,18 @@ h1, p {
 		word-wrap: break-word;
 	}
 
+	.events {
+		padding: 80px 0 120px 0;
+	}
+
 	.events__title {
 		letter-spacing: .8px;
 		margin-bottom: 15px;
 	}
 
 	.events__slide {
-		height: 683px;
+		min-height: 683px;
+		width: 100%;
 	}
 
 	.events__img {
@@ -2246,7 +2282,7 @@ h1, p {
 
 	.contacts__content {
 		display: block;
-		padding: 43px 50px 39px;
+		padding: 43px 0 39px;
 	}
 
 	.contacts__address {
@@ -2285,7 +2321,19 @@ h1, p {
 	}
 
 	.footer {
-		padding: 40px 50px 36px;
+		padding: 0;
+	}
+
+	.footer__logo {
+		margin-top: 10px;
+	}
+
+	.footer__social {
+		margin-bottom: 10px;
+	}
+
+	.footer__container {
+		padding: 40px 50px 25px 50px;
 	}
 
 	.footer__img {
@@ -2297,7 +2345,7 @@ h1, p {
 		margin-left: 30px;
 	}
 
-	.footer__logo-img {
+	.footer__logo-img, .footer__logo {
 		width: 173px;
 	}
 
@@ -2337,6 +2385,10 @@ h1, p {
 	.gallery__filter {
 		height: 122px;
 		margin-bottom: 0;
+	}
+
+	.choices__list--dropdown {
+		background: url(../img/gallery_bg.jpg);
 	}
 
 	.gallery__container-1 {
@@ -2387,7 +2439,7 @@ h1, p {
 	}
 
 	.personality-date {
-		padding-bottom: 10px;
+		padding-bottom: 5px;
 	}
 
 	.personality-desc {
@@ -2410,7 +2462,7 @@ h1, p {
 	}
 
 	.events {
-		padding: 70px 0 80px 0;
+		padding: 70px 0 120px 0;
 	}
 
 	#events__swiper {
@@ -2433,11 +2485,32 @@ h1, p {
 		padding-bottom: 31px;
 	}
 
+	.projects__title {
+		margin-bottom: 14px;
+	}
+
+	.projects__text {
+		letter-spacing: .5px;
+		margin-bottom: 30px;
+	}
+
+	.projects__link-1920 {
+		display: none;
+	}
+
+	.projects__link-768 {
+		display: inline-block;
+	}
+
+	.projects__title-min {
+		margin-bottom: 29px;
+	}
+
 	.projects__swiper {
 		max-width: 561.57px;
 	}
 
-	.projects__slide-img {
+	.projects__slide-img, .projects__slide-img-2 {
 		width: 264px;
 		height: 106px;
 	}
@@ -2448,7 +2521,7 @@ h1, p {
 	}
 
 	.contacts__content {
-		padding: 43px 50px 40px;
+		padding: 43px 0 40px;
 	}
 
 	.contacts__title {
@@ -2463,7 +2536,7 @@ h1, p {
 
 	.contacts__form {
 		display: block;
-		margin-bottom: 30px;
+		margin-bottom: 29px;
 	}
 
 	.contacts__blocks-input {
@@ -2668,7 +2741,7 @@ h1, p {
 		max-width: 195px;
 	}
 
-	.projects__slide-img {
+	.projects__slide-img,.projects__slide-img-2 {
 		width: 195px;
 		height: 65px;
 	}
@@ -2710,9 +2783,14 @@ h1, p {
 		margin-bottom: 20px;
 	}
 
-	.footer {
+	.footer__container {
 		padding: 15px 15px;
 		flex-direction: column-reverse;
+		justify-content: center;
+	}
+
+	.footer__logo {
+		margin-left: 20px;
 	}
 
 	.footer__social {
@@ -2835,7 +2913,12 @@ h1, p {
 	}
 
 	.gallery__text {
+		letter-spacing: 1.5px;
 		margin-bottom: 9px;
+	}
+
+	.choices,.choices__inner,.choices__list {
+		width: 290px;
 	}
 
 	.gallery__swiper_320 {
@@ -2988,7 +3071,7 @@ h1, p {
 		height: 320px;
 	}
 
-	.footer {
+	.footer__container {
 		padding: 15px 15px;
 	}
 
