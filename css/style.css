@@ -241,7 +241,7 @@ figure {
 .empty-320,
 .events__bullet,
 .projects__link-768,
-.projects__text.for-320px,
+.for-320px,
 .contacts__btn-320,
 .map-2 {
     display: none;
@@ -2682,7 +2682,7 @@ h1, p {
 	}
 
 	.events {
-		padding: 50px 0 50px 0;
+		padding: 50px 0 80px 0;
 	}
 
 	.events__info {
@@ -2737,6 +2737,10 @@ h1, p {
 		margin-bottom: 20px;
 	}
 
+	.projects__text {
+    	margin-bottom: 18px;
+}
+
 	.projects__swiper {
 		max-width: 195px;
 	}
@@ -2752,8 +2756,7 @@ h1, p {
 	}
 
 	.contacts__content {
-		padding: 0 15px 20px 15px;
-		border: none;
+		padding: 0 0 20px 0;
 	}
 
 	.contacts__address {
@@ -2786,11 +2789,15 @@ h1, p {
 	.footer__container {
 		padding: 15px 15px;
 		flex-direction: column-reverse;
-		justify-content: center;
+		align-items: center;
 	}
 
-	.footer__logo {
-		margin-left: 20px;
+	.footer__logo {	
+		margin: 0;
+	}
+
+	.footer__logo-img, .footer__logo {
+		width: 96.8px;
 	}
 
 	.footer__social {
@@ -2841,12 +2848,14 @@ h1, p {
 
 	.gallery__swiper_tablet_1024,
 	.catalog__text,
+	.for-1920px,
 	.contacts__btn {
 		display: none;
 	}
 
 	.gallery__swiper_320,
-	.contacts__btn-320 {
+	.contacts__btn-320,
+	.for-320px {
 		display: block;
 	}
 
@@ -2957,7 +2966,7 @@ h1, p {
 	}
 
 	.ui-accordion .ui-accordion-header {
-		padding: 20px 0 20px;
+		padding: 20px 0 19px;
 	}
 
 	.ui-accordion .catalog__block-content {
@@ -2971,7 +2980,7 @@ h1, p {
 	}
 
 	.catalog__personality {
-		padding-top: 48px;
+		padding-top: 50px;
 	}
 
 	.personality-date {
@@ -2996,6 +3005,14 @@ h1, p {
 
 	#events__5 {
 		order: 5;
+	}
+
+	.events__link {
+		padding-left: 8px;
+	}
+
+	.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+		bottom: -40px;
 	}
 
 	.projects {
