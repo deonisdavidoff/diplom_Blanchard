@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.querySelectorAll(".container-dropdown_activ").forEach(el => {
           if (el != dropdown) {
-            el.classList.remove("active-header__item_botton");
+            el.classList.remove("active-header__item_bottom");
           }
         })
   
-        dropdown.classList.toggle("active-header__item_botton");
+        dropdown.classList.toggle("active-header__item_bottom");
         btn.classList.toggle("active--btn")
       })
     });
@@ -68,9 +68,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     document.addEventListener("click", function(e) {
       let target = e.target;
-      if (!target.closest(".header__list-botton")) {
+      if (!target.closest(".header__list-bottom")) {
         document.querySelectorAll(".container-dropdown").forEach(el => {
-            el.classList.remove("active-header__item_botton");
+            el.classList.remove("active-header__item_bottom");
         })
          document.querySelectorAll(".header__dropdown-btn").forEach(el => {
             el.classList.remove("active--btn");
@@ -115,70 +115,61 @@ document.addEventListener("DOMContentLoaded", function() {
       noChoicesText: 'Нет вариантов выбора',
       itemSelectText: ''
   });
+
+  let gallerySlider = new Swiper(".gallery__swiper", {
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    speed: 2000,
+      keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true,
+        
+    },
   
-  
-  
-   new Swiper('.gallery__swiper_1920', {
-    slidesPerView: 1,
     spaceBetween: 50,
-    speed: 2000,
-    
-    navigation: {
-      nextEl: '.gallery__btn-next',
-      prevEl: '.gallery__btn-prev',
-    },
-  
-    
     pagination: {
-      el: '.slider-nav__fraction',
-      type: 'fraction',
+      el: ".gallery__fraction",
+      type: "fraction"
     },
-  
-  })
-  
-  
-  new Swiper('.gallery__swiper_tablet_1024', {
-    slidesPerView: 1,
-    spaceBetween: 34,
-    speed: 2000,
-    
     navigation: {
-      nextEl: '.gallery__btn-next',
-      prevEl: '.gallery__btn-prev',
-    },
-  
-    
-    pagination: {
-      el: '.slider-nav__fraction',
-      type: 'fraction',
+      nextEl: ".gallery__btn-next",
+      prevEl: ".gallery__btn-prev"
     },
   
     breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 15
+      },
+      576: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 34
+      },
+
       800: {
-        spaceBetween: 38,
+        slidesPerView: 2,
+        slidesPerGroup: 3,
+        spaceBetween: 34
+      },
+  
+      1800: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 50
       }
     },
   
-  })
+    a11y: {
+      prevSlideMessage: 'Предыдущий',
+      nextSlideMessage: 'Следующий',
+    }
+
+  });  
   
-  new Swiper('.gallery__swiper_320', {
-    slidesPerView: 1,
-    spaceBetween: 12,
-    speed: 2000,
-    
-    navigation: {
-      nextEl: '.gallery__btn-next',
-      prevEl: '.gallery__btn-prev',
-    },
-  
-    
-    pagination: {
-      el: '.slider-nav__fraction',
-      type: 'fraction',
-    },
-  
-  })
-  
+
   
   new Swiper('.events__swiper', {
     
@@ -213,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
       280: {
         slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 15,
       },
     },
@@ -239,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
       },
   
       620: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 33.97,
       },
   
@@ -251,16 +243,36 @@ document.addEventListener("DOMContentLoaded", function() {
   
   })
 
-  $( function() {
-    $( document ).tooltip( {
-      items: "tooltip-marker",
-      maxWidth: 264,
-    });
-    $( ".tooltip-marker" ).tooltip({
-      position: { my: "bottom-15", at: "center-1" },
-    });
-  } );
 
+tippy('.tooltip-marker-1', {
+  content: 'Пример современных тенденций - современная методология разработки',
+  placement: 'top',
+  animation: 'scale',
+  duration: 200,
+  delay: 300,
+  inertia: true,
+  maxWidth: 264,
+});
+
+tippy('.tooltip-marker-2', {
+  content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции',
+  placement: 'top',
+  animation: 'scale',
+  duration: 200,
+  delay: 400,
+  inertia: true,
+  maxWidth: 264,
+});
+
+tippy('.tooltip-marker-3', {
+  content: 'В стремлении повысить качество',
+  placement: 'top',
+  animation: 'scale',
+  duration: 200,
+  delay: 400,
+  inertia: true,
+  maxWidth: 232,
+});
  
   new JustValidate('.contacts__form', {
     rules: {
