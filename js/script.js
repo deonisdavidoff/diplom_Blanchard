@@ -246,30 +246,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 tippy('.tooltip-marker-1', {
   content: 'Пример современных тенденций - современная методология разработки',
+  trigger: 'click',
   placement: 'top',
   animation: 'scale',
-  duration: 200,
-  delay: 300,
+  duration: 300,
+  delay: 0,
   inertia: true,
   maxWidth: 264,
 });
 
 tippy('.tooltip-marker-2', {
   content: 'Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции',
+  trigger: 'click',
   placement: 'top',
   animation: 'scale',
-  duration: 200,
-  delay: 400,
+  duration: 300,
+  delay: 0,
   inertia: true,
   maxWidth: 264,
 });
 
 tippy('.tooltip-marker-3', {
   content: 'В стремлении повысить качество',
+  trigger: 'click',
   placement: 'top',
   animation: 'scale',
-  duration: 200,
-  delay: 400,
+  duration: 300,
+  delay: 0,
   inertia: true,
   maxWidth: 232,
 });
@@ -278,9 +281,10 @@ tippy('.tooltip-marker-3', {
     rules: {
       name: {
         required: true,
-        minLength: 2
+        minLength: 2,
+        maxLength: 30
       },
-      phone: {
+      tel: {
         required: true,
         function: (name, value) => {
           const num = selector.inputmask.unmaskedvalue()
