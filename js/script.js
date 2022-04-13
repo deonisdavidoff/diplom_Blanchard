@@ -286,15 +286,13 @@ tippy('.tooltip-marker-3', {
       },
       tel: {
         required: true,
-        function: (name, value) => {
-          const num = selector.inputmask.unmaskedvalue()
-          return Number(num) && num.length === 10
-        }
+        minLength: 10,
+        maxLength: 11
       },
     },
     messages: {
       name: "Недопустимый формат",
-      phone: "Недопустимый формат",
+      tel: "Недопустимый формат",
     }
   })
   
@@ -422,6 +420,11 @@ tippy('.tooltip-marker-3', {
   };
   
   });
+  
+  
+  
+  
+   
   
   
   
