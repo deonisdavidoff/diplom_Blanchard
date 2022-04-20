@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     document.querySelector(".nav-close").addEventListener("click", function() {
       document.querySelector(".header__nav_burger").classList.remove("active");
-     })
+     });
+    
+    document.querySelector(".header__link").addEventListener("click", function() {
+      document.querySelector(".header__nav_burger").classList.remove("active");
+     });
    
      Array.prototype.forEach.call(
       document.querySelectorAll('.myElements'),
@@ -321,8 +325,23 @@ tippy('.tooltip-marker-3', {
         document.querySelector(`[data-target="${path}"]`).classList.add('catalog__sub-item_active');
       });
     });
+
+    document.querySelectorAll('.catalog__content-link').forEach(function (btn) { 
+      btn.addEventListener("click", function() {
+      this.classList.add("catalog__content-link-active");
   
-  
+        document.querySelectorAll(".catalog__content-link").forEach(el => {
+          if (el != btn) {
+            el.classList.remove("catalog__content-link-active");
+          }
+        });
+          
+        dropdown.classList.toggle("active-header__item_bottom");
+        btn.classList.toggle("active--btn")
+      })
+    });
+
+
   ymaps.ready(init);
   function init() {
       var myMap = new ymaps.Map("YMapsID", {
